@@ -12,7 +12,6 @@ public class CacheImplTest {
 
 	@Test
 	public void testThreadingIssue() throws CustomException, InterruptedException{
-		//CacheImpl impl = mock(CacheImpl.class);
 		CacheImpl impl=new CacheImpl();
 		Runnable task = () -> { try {
 			impl.add(4,false);
@@ -30,7 +29,6 @@ public class CacheImplTest {
 		Thread.sleep(600);
 		
 		assertEquals(impl.get(4).isExisting(), false);
-		//verify(impl, times(1)).add(4);
 	}
 	
 	
